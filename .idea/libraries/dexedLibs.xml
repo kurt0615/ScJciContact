@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="dexedLibs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/android-support-v4-7edef93290ef9ba035ed6ad5436cff8e.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gdata-contacts-3.0-adbe29a2b117c520be0b4c135558a2db.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gdata-client-meta-1.0-19ef1bc620dec4d355a8abeca1a85f39.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gdata-client-1.0-bfcdd7a54a4ece04584c6720d2468d45.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gdata-contacts-meta-3.0-ee03ea598e21f0f2f6574358de02c0b8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gdata-core-1.0-6c6ac276a9ce356d742b3c6b4ab6408f.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/gdata-base-1.0-d5513991329e0453f95ea0902b78a1d7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/bin/dexedLibs/guava-14.0.1-55ccd7dcb8e28f424fd5e820e6cd0768.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
