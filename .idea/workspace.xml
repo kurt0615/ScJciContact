@@ -33,8 +33,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1231eb56-9de3-4020-9450-54fcd3b1358c" name="Default" comment="q">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ScJciContact.iml" afterPath="$PROJECT_DIR$/ScJciContact.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ScJciContact.iws" />
@@ -208,7 +206,7 @@
       <file leaf-file-name="DummyContent.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/scjci/contact/dummy/DummyContent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="17" selection-start="2064" selection-end="2064" vertical-scroll-proportion="0.25" vertical-offset="165" max-vertical-offset="3885">
+            <state line="70" column="18" selection-start="2424" selection-end="2424" vertical-scroll-proportion="-3.089701" vertical-offset="2355" max-vertical-offset="3885">
               <folding>
                 <element signature="method#syncContact#0;class#DummyContent#0" expanded="false" />
                 <element signature="method#genAvatarPath#0;class#DummyContent#0" expanded="false" />
@@ -683,15 +681,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35251215" sideWeight="0.6704289" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21557562" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21446384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15964344" sideWeight="0.6704289" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42776525" sideWeight="0.49918962" order="3" side_tool="false" content_ui="tabs" x="1389" y="336" width="1234" height="351" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2169576" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21446384" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18881686" sideWeight="0.32162458" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295711" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18881686" sideWeight="0.32162458" order="3" side_tool="true" content_ui="tabs" />
@@ -702,7 +700,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24878444" sideWeight="0.6038375" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16786227" sideWeight="0.7830424" order="0" side_tool="false" content_ui="combo" x="1627" y="180" width="317" height="594" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16786227" sideWeight="0.78553617" order="0" side_tool="false" content_ui="combo" x="1627" y="180" width="317" height="594" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32054177" sideWeight="0.49918962" order="2" side_tool="false" content_ui="tabs" x="1370" y="368" width="1234" height="292" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -810,11 +808,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/org/json/JSONObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="28" selection-start="4156" selection-end="4156" vertical-scroll-proportion="0.37096775" vertical-offset="1928" max-vertical-offset="2424" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/scjci/contact/ItemDetailFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="0" selection-start="2289" selection-end="2289" vertical-scroll-proportion="0.0" vertical-offset="1055" max-vertical-offset="2520">
@@ -927,9 +920,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-8.735145" vertical-offset="5145" max-vertical-offset="15525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/scjci/contact/dummy/DummyContent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="17" selection-start="2064" selection-end="2064" vertical-scroll-proportion="0.25" vertical-offset="165" max-vertical-offset="3885">
+        <state line="70" column="18" selection-start="2424" selection-end="2424" vertical-scroll-proportion="-3.089701" vertical-offset="2355" max-vertical-offset="3885">
           <folding>
             <element signature="method#syncContact#0;class#DummyContent#0" expanded="false" />
             <element signature="method#genAvatarPath#0;class#DummyContent#0" expanded="false" />
