@@ -46,12 +46,13 @@ import java.util.List;
  * TODO: Replace all uses of this class before publishing your app.
  */
 public class DummyContent {
-    private final static String userEmail = "xxx@xxx.com";
+    private final static String userEmail = "xxx@gmail.com";
     private final static String userPassword = "xxx";
     private SQLiteQueryHelper sqliteQueryHelper = null;
     private Context mContext;
 
     public DummyContent(Context context) {
+
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
                 .detectDiskReads()
                 .detectDiskWrites()
@@ -62,7 +63,7 @@ public class DummyContent {
         this.sqliteQueryHelper = new SQLiteQueryHelper(mContext);
 
         //debug use
-        this.sqliteQueryHelper.selectOperateView("select * from CONTACT",null);
+       // this.sqliteQueryHelper.selectOperateView("select * from CONTACT",null);
     }
 
     public Cursor initData() {
