@@ -32,9 +32,7 @@
     <option name="TOOL_WINDOW_LOG_LEVEL" value="ERROR" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1231eb56-9de3-4020-9450-54fcd3b1358c" name="Default" comment="q">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1231eb56-9de3-4020-9450-54fcd3b1358c" name="Default" comment="q" />
     <ignored path="ScJciContact.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
