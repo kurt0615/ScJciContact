@@ -23,6 +23,7 @@ import com.google.gdata.data.extensions.StructuredPostalAddress;
 import com.google.gdata.util.ServiceException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.scjci.contact.vo.UserInfo;
 import com.util.SQLiteQueryHelper;
 
@@ -35,6 +36,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -252,8 +254,11 @@ public class DummyContent {
 
             //userInfo =gson.fromJson(json3,UserInfo.class);
             //userInfo =gson.fromJson(userInfo2.toString(), UserInfo.class);
-           /* userInfo = new Gson().fromJson(json2,UserInfo.class);
-            userInfo = new Gson().fromJson(json,UserInfo.class);*/
+            //TODO
+            userInfo = new Gson().fromJson(json,new TypeToken<Collection<UserInfo>>(){}.getType());
+
+
+            userInfo = new Gson().fromJson(json,UserInfo.class);
         }
         return userInfo;
     }
