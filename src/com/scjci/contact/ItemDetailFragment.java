@@ -93,11 +93,11 @@ public class ItemDetailFragment extends Fragment {
                 job.setText(userInfo.getJob());
             }
 
+            final LinearLayout mobilephonecall = (LinearLayout) rootView.findViewById(R.id.mobilephonecall);
             if(StringUtils.isNotBlank(userInfo.getPhoneInfo().getMobilePhone())){
                 final TextView mobilephone; mobilephone = (TextView) rootView.findViewById(R.id.mobilephone);
                 mobilephone.setText(userInfo.getPhoneInfo().getMobilePhone());
 
-                final LinearLayout mobilephonecall = (LinearLayout) rootView.findViewById(R.id.mobilephonecall);
                 mobilephonecall.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
@@ -116,13 +116,16 @@ public class ItemDetailFragment extends Fragment {
                         return true;
                     }
                 });
+            }else{
+                mobilephonecall.setVisibility(View.INVISIBLE);
+                rootView.findViewById(R.id.mobilephoneSpilte).setVisibility(View.INVISIBLE);
             }
 
+            final LinearLayout telephonecall = (LinearLayout) rootView.findViewById(R.id.telephonecall);
             if(StringUtils.isNotBlank(userInfo.getPhoneInfo().getTelephone())){
                 final TextView telephone = (TextView) rootView.findViewById(R.id.telephone);
                 telephone.setText(userInfo.getPhoneInfo().getTelephone());
 
-                final LinearLayout telephonecall = (LinearLayout) rootView.findViewById(R.id.telephonecall);
                 telephonecall.setOnTouchListener(new View.OnTouchListener() {
                     @Override
                     public boolean onTouch(View v, MotionEvent event) {
@@ -141,6 +144,9 @@ public class ItemDetailFragment extends Fragment {
                         return true;
                     }
                 });
+            }else{
+                telephonecall.setVisibility(View.INVISIBLE);
+                rootView.findViewById(R.id.telephoneSpilte).setVisibility(View.INVISIBLE);
             }
 
             if(StringUtils.isNotBlank(userInfo.getPhoneInfo().getFax())){
