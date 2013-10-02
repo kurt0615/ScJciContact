@@ -50,8 +50,8 @@ import java.util.List;
  * TODO: Replace all uses of this class before publishing your app.
  */
 public class DummyContent {
-    private final static String userEmail = "kurt0615@gmail.com";
-    private final static String userPassword = "yangjw0615";
+    private final static String userEmail = "xxx@xxx";
+    private final static String userPassword = "xxx";
     private SQLiteQueryHelper sqliteQueryHelper = null;
     private Context mContext;
 
