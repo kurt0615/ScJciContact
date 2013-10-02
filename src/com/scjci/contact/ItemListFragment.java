@@ -1,7 +1,9 @@
 package com.scjci.contact;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.LoaderManager;
+import android.app.Notification;
 import android.app.ProgressDialog;
 import android.app.SearchManager;
 import android.content.Context;

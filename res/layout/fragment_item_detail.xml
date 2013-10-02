@@ -68,7 +68,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/name"
-                    android:text="林先生"
+                    android:hint="無資訊"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -97,7 +97,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/couple"
-                    android:text="林XX"
+                    android:hint="無資訊"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -126,7 +126,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/job"
-                    android:text="建凱工業"
+                    android:hint="無資訊"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -146,8 +146,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp">
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -187,17 +187,19 @@
                     android:orientation="vertical"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:paddingLeft="16dp">
+                   >
 
                     <TextView
+                        android:paddingLeft="16dp"
                         android:id="@+id/mobilephone"
-                        android:text="0955118998"
+                        android:hint="無資訊"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18dip">
                     </TextView>
 
                     <TextView
+                        android:paddingLeft="16dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="行動裝置"
@@ -243,23 +245,24 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="13"
+                    android:layout_weight="14"
                     android:paddingTop="5dp"
                     android:paddingBottom="5dp"
-                    android:paddingLeft="16dp"
                     android:orientation="vertical">
 
                     <TextView
                         android:id="@+id/telephone"
-                        android:text="0422610378"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:hint="無資訊"
                         android:textSize="18dip">
                     </TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
                         android:text="電話"
                         android:textColor="#8a8a8a" >
                     </TextView>
@@ -279,7 +282,7 @@
                     android:layout_weight="1"
                     android:gravity="center">
                     <ImageView
-                        android:id="@+id/mobilephoneimg"
+                        android:id="@+id/telephoneimg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/phone" />
@@ -303,7 +306,7 @@
 
                 <TextView
                     android:id="@+id/fax"
-                    android:text="0422610378-9"
+                    android:hint="無資訊"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -359,7 +362,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/homeaddr"
-                    android:text="xxx"
+                    android:hint="無資訊"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -389,7 +392,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/contactaddr"
-                    android:text="ooo0"
+                    android:hint="無資訊"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -419,7 +422,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/workaddr"
-                    android:text="kkk"
+                    android:hint="無資訊"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -475,7 +478,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/birthday"
-                    android:text="1985-06-15"
+                    android:hint="無資訊"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
@@ -505,7 +508,7 @@
                 android:paddingBottom="5dp">
                 <TextView
                     android:id="@+id/joindate"
-                    android:text="1997-09-15"
+                    android:hint="無資訊"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18dip">
