@@ -9,3 +9,4 @@ gradlew
 .idea/
 *.iml
 *.properties
+out
