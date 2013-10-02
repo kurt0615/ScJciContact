@@ -24,6 +24,7 @@ import com.google.gdata.util.ServiceException;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+import com.scjci.contact.vo.PhoneInfo;
 import com.scjci.contact.vo.UserInfo;
 import com.util.SQLiteQueryHelper;
 
@@ -34,6 +35,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Type;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -48,8 +50,8 @@ import java.util.List;
  * TODO: Replace all uses of this class before publishing your app.
  */
 public class DummyContent {
-    private final static String userEmail = "xxx@gmail.com";
-    private final static String userPassword = "xxx";
+    private final static String userEmail = "kurt0615@gmail.com";
+    private final static String userPassword = "yangjw0615";
     private SQLiteQueryHelper sqliteQueryHelper = null;
     private Context mContext;
 
@@ -89,7 +91,6 @@ public class DummyContent {
     }
 
     public Cursor searchContact(String condition){
-        sqliteQueryHelper.open();
         Cursor cursor = sqliteQueryHelper.selectOperate(
                 "select USER_ID as _id,NAME,AVATARPATH from CONTACT where name like ?  or phone like ?",
                 new String[]{"%"+condition+"%","%"+condition+"%"});
@@ -100,7 +101,6 @@ public class DummyContent {
 
     private boolean dbHasContact(){
         boolean ret = false;
-        sqliteQueryHelper.open();
         Cursor cursor = sqliteQueryHelper.selectOperate("select * from CONTACT", null);
         if (cursor != null) {
             try {
@@ -113,7 +113,6 @@ public class DummyContent {
                 if (cursor != null) {
                     cursor.close();
                 }
-                sqliteQueryHelper.close();
             }
         }
         return ret;
@@ -123,64 +122,17 @@ public class DummyContent {
      * set DataSource from sqLite
      */
     private Cursor getContact() {
-        this.sqliteQueryHelper.open();
         Cursor cursor = sqliteQueryHelper.selectOperate("select USER_ID as _id,NAME,AVATARPATH from CONTACT", null);
         return cursor;
     }
 
-    /*public HashMap<String, Object> getUserContact(String uid) {
-        HashMap<String, Object> map = null;
-        this.sqliteQueryHelper.open();
-        Cursor cursor = sqliteQueryHelper.selectOperate("select * from CONTACT where  USER_ID = ? ", new String[]{uid});
-        if (cursor != null) {
-            try {
-                if (cursor.getCount() > 0) {
-                    int userId = cursor.getColumnIndex("USER_ID");
-                    int name = cursor.getColumnIndex("NAME");
-                    int phone = cursor.getColumnIndex("PHONE");
-                    int addr = cursor.getColumnIndex("ADDRESS");
-                    int mail = cursor.getColumnIndex("MAIL");
-                    int date = cursor.getColumnIndex("DATE");
-                    int site = cursor.getColumnIndex("WEBSITE");
-                    int other = cursor.getColumnIndex("OTHER");
-                    int avatar = cursor.getColumnIndex("AVATARPATH");
-
-                    cursor.moveToFirst();
-                    do {
-                        map = new HashMap<String, Object>();
-                        map.put("userId", cursor.getString(userId));
-                        map.put("name", cursor.getString(name));
-                        map.put("phone", cursor.getString(phone));
-                        map.put("addr", cursor.getString(addr));
-                        map.put("date", cursor.getString(date));
-                        map.put("mail", cursor.getString(mail));
-                        map.put("site", cursor.getString(site));
-                        map.put("other", cursor.getString(other));
-                        map.put("avatarPath", cursor.getString(avatar));
-                    } while (cursor.moveToNext());
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                if (cursor != null) {
-                    cursor.close();
-                    this.sqliteQueryHelper.close();
-                }
-            }
-        }
-        return map;
-    }*/
-
     public UserInfo getUserInfo(String uid) {
         UserInfo userInfo = null;
-        JSONObject jsonObject = null;
-        JSONObject jsonObjectAll = new JSONObject();
-        this.sqliteQueryHelper.open();
         Cursor cursor = sqliteQueryHelper.selectOperate("select * from CONTACT where  USER_ID = ? ", new String[]{uid});
         if (cursor != null) {
             try {
                 if (cursor.getCount() > 0) {
-                    int userId = cursor.getColumnIndex("USER_ID");
+                    //int userId = cursor.getColumnIndex("USER_ID");
                     int name = cursor.getColumnIndex("NAME");
                     int couple = cursor.getColumnIndex("COUPLE");
                     int job = cursor.getColumnIndex("JOB");
@@ -192,73 +144,32 @@ public class DummyContent {
                     int otherInfo = cursor.getColumnIndex("OTHER");
                     int avatarPath = cursor.getColumnIndex("AVATARPATH");
 
-                    jsonObject = new JSONObject();
+                    JSONObject jsonObject = new JSONObject();
                     cursor.moveToFirst();
                     do {
                         jsonObject.put("name",cursor.getString(name));
-                        jsonObject.put("couple",cursor.getString(couple));
-                        jsonObject.put("job",cursor.getString(job));
-                        jsonObject.put("phoneInfo",cursor.getString(phoneInfo));
-                        jsonObject.put("addrInfo",cursor.getString(addrInfo));
-                        jsonObject.put("dateInfo",cursor.getString(dateInfo));
-                        jsonObject.put("mailInfo",cursor.getString(mailInfo));
-                        jsonObject.put("siteInfo",cursor.getString(siteInfo));
-                        jsonObject.put("otherInfo",cursor.getString(otherInfo));
+                        jsonObject.put("couple", cursor.getString(couple));
+                        jsonObject.put("job", cursor.getString(job));
+                        jsonObject.put("phoneInfo",  new JSONObject(cursor.getString(phoneInfo)));
+                        jsonObject.put("addrInfo",new JSONObject(cursor.getString(addrInfo)));
+                        jsonObject.put("dateInfo",new JSONObject(cursor.getString(dateInfo)));
+                        jsonObject.put("mailInfo",new JSONObject(cursor.getString(mailInfo)));
+                        jsonObject.put("siteInfo",new JSONObject(cursor.getString(siteInfo)));
+                        jsonObject.put("otherInfo",new JSONObject(cursor.getString(otherInfo)));
                         jsonObject.put("avatarPath",cursor.getString(avatarPath));
-                        /*map = new HashMap<String, Object>();
-                                                map.put("userId", cursor.getString(userId));
-                                                map.put("name", cursor.getString(name));
-                                                map.put("phone", cursor.getString(phone));
-                                                map.put("addr", cursor.getString(addr));
-                                                map.put("date", cursor.getString(date));
-                                                map.put("mail", cursor.getString(mail));
-                                                map.put("site", cursor.getString(site));
-                                                map.put("other", cursor.getString(other));
-                                                map.put("avatarPath", cursor.getString(avatar));*/
                     } while (cursor.moveToNext());
+
+                    if(jsonObject != null){
+                        userInfo = new Gson().fromJson(jsonObject.toString(), new TypeToken<UserInfo>(){}.getType());
+                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             } finally {
                 if (cursor != null) {
                     cursor.close();
-                    this.sqliteQueryHelper.close();
                 }
             }
-        }
-        if(jsonObject != null){
-            /*try {
-                jsonObjectAll.put("UserInfo",jsonObject);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            String json = jsonObjectAll.toString();*/
-
-            String json = jsonObject.toString();
-
-
-
-           /* JSONObject userInfo2 = new JSONObject();
-            try {
-                userInfo2.put("name", "abc");
-                userInfo2.put("job", "def");
-                userInfo2.put("phoneInfo","{\"mobile\":\"1\",\"fax\":\"2\",\"tele\":\"3\"}");
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            String json3 =  new Gson().toJson(userInfo2);*/
-
-            Gson gson = new Gson();
-
-
-
-            //userInfo =gson.fromJson(json3,UserInfo.class);
-            //userInfo =gson.fromJson(userInfo2.toString(), UserInfo.class);
-            //TODO
-            userInfo = new Gson().fromJson(json,new TypeToken<Collection<UserInfo>>(){}.getType());
-
-
-            userInfo = new Gson().fromJson(json,UserInfo.class);
         }
         return userInfo;
     }
@@ -284,7 +195,7 @@ public class DummyContent {
             feedUrl = new URL(url);
             resultFeed = service.getFeed(getQueryParameter(feedUrl, service, updateTime), ContactFeed.class);
 
-            String avatarPath;
+            String avatarPath="";
             String userId;
             String userName = "";
             String couple = "";
@@ -296,7 +207,7 @@ public class DummyContent {
             JSONObject siteJsonObject;
             JSONObject otherJsonObject;
             String[] tmp;
-            sqliteQueryHelper.open();
+
             for (ContactEntry entry : resultFeed.getEntries()) {
                 //ID
                 //Log.i("NBA:",entry.getId().toString());
@@ -491,7 +402,6 @@ public class DummyContent {
         } catch (Exception e) {
             System.err.println("Exception: " + e.toString());
         } finally {
-            sqliteQueryHelper.close();
         }
     }
 
@@ -530,7 +440,7 @@ public class DummyContent {
                 }
             }
         }
-        return null;
+        return "";
     }
 
     private Query getQueryParameter(URL feedUrl, ContactsService service, Date updateTime) throws IOException, ServiceException {

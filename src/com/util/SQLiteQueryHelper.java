@@ -10,35 +10,25 @@ import java.util.HashMap;
 
 public class SQLiteQueryHelper {
 
-    public SQLiteDatabase sqliteDB = null;
-    private Context context = null;
+    private  SQLiteDatabase mSqliteDB = null;
+    private  SQLiteHelper mSQLiteHelper = null;
+    private  Context mContext = null;
 
-    public SQLiteQueryHelper(Context context) {
-        this.context = context;
-    }
-
-    public void close() {
-        if (sqliteDB != null && this.sqliteDB.isOpen()) {
-            this.sqliteDB.close();
+    public SQLiteQueryHelper(Context context){
+        this.mSQLiteHelper = SQLiteHelper.getInstance(context);
+        this.mContext = context;
+        try{
+            this.mSqliteDB = this.mSQLiteHelper.getWritableDatabase();
+        }catch(Exception e){
+            Log.i("SQLiteQueryHelperInitError",e.toString());
         }
     }
-
-    public void open() {
-        if (sqliteDB == null || !sqliteDB.isOpen()) {
-            this.sqliteDB = new SQLiteHelper(context).getWritableDatabase();
-        }
-    }
-
-	/*public void dropDB(){
-        SQLiteHelper.dropDataBase(context);
-	}*/
 
     //select
     public void selectOperateView(String statement, String[] condition) {
         Cursor cursor = null;
-        open();
-        if(this.sqliteDB != null && this.sqliteDB.isOpen()){
-            cursor =  this.sqliteDB.rawQuery(statement,condition);
+        if(this.mSqliteDB != null){
+            cursor =  this.mSqliteDB.rawQuery(statement,condition);
         }
 
         if (cursor != null) {
@@ -80,38 +70,38 @@ public class SQLiteQueryHelper {
     //select
     public Cursor selectOperate(String statement, String[] condition) {
         Cursor c = null;
-        if(this.sqliteDB != null && this.sqliteDB.isOpen()){
-            c =  this.sqliteDB.rawQuery(statement,condition);
+        if(this.mSqliteDB != null){
+            c =  this.mSqliteDB.rawQuery(statement,condition);
         }
         return c;
     }
 
     //insert、update
     public void transactionOperate(String statement, Object[] condition) {
-        if(this.sqliteDB != null && this.sqliteDB.isOpen()){
-            this.sqliteDB.beginTransaction();
+        if(this.mSqliteDB != null){
+            this.mSqliteDB.beginTransaction();
             try {
-                this.sqliteDB.execSQL(statement, condition);
-                this.sqliteDB.setTransactionSuccessful();
+                this.mSqliteDB.execSQL(statement, condition);
+                this.mSqliteDB.setTransactionSuccessful();
             } catch (SQLiteException e) {
                 Log.i("transactionOperateError",e.toString());
             } finally {
-                this.sqliteDB.endTransaction();
+                this.mSqliteDB.endTransaction();
             }
         }
     }
 
     //delete
     public void transactionDeleteOperate(String table, String whereClause, String[] whereArgs) {
-        if(this.sqliteDB != null && this.sqliteDB.isOpen()){
-            this.sqliteDB.beginTransaction();
+        if(this.mSqliteDB != null){
+            this.mSqliteDB.beginTransaction();
             try {
-                this.sqliteDB.delete(table, null,null);
-                this.sqliteDB.setTransactionSuccessful();
+                this.mSqliteDB.delete(table, null,null);
+                this.mSqliteDB.setTransactionSuccessful();
             } catch (SQLiteException e) {
                 Log.i("transactionDeleteOperate",e.toString());
             } finally {
-                this.sqliteDB.endTransaction();
+                this.mSqliteDB.endTransaction();
             }
         }
     }

@@ -1,10 +1,12 @@
 package com.scjci.contact;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -13,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
-
+import org.apache.commons.lang3.StringUtils;
 import com.scjci.contact.dummy.DummyContent;
 import com.scjci.contact.vo.UserInfo;
 
@@ -66,11 +68,11 @@ public class ItemDetailFragment extends Fragment {
 //avatar
 
         ImageView iv = (ImageView) rootView.findViewById(R.id.avatar);
-        if (userInfo.getAvatarPath() != null) {
+        if(StringUtils.isNotBlank(userInfo.getAvatarPath())){
             //iv.setImageBitmap(BitmapFactory.decodeFile( mItem.get("avatarPath").toString()));
             iv.setImageBitmap(BitmapFactory.decodeFile(userInfo.getAvatarPath()));
             //iv.setImageDrawable((BitmapDrawable) mItem.get("avatarPath"));
-        } else {
+        }else {
             iv.setImageDrawable(getResources().getDrawable(R.drawable.nopicture));
         }
 
@@ -108,7 +110,11 @@ public class ItemDetailFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                getActivity().finish();
+               // getActivity().finish();
+                Intent intent = new Intent();
+                intent.setClass(this.getActivity(), ItemListActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);

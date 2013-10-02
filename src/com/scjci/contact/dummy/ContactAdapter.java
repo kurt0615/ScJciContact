@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.scjci.contact.R;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.lang.ref.WeakReference;
 
 public class ContactAdapter extends SimpleCursorAdapter {
@@ -39,9 +41,10 @@ public class ContactAdapter extends SimpleCursorAdapter {
             }else {
                 holder = (ViewHolder) convertView.getTag();
             }
-            holder.name.setText(this.getCursor().getString(this.getCursor().getColumnIndex("NAME")));
-            holder.userId.setText(this.getCursor().getString(this.getCursor().getColumnIndex("_id")));
-            new ImageDownloaderTask(holder.avatar).execute(this.getCursor().getString(this.getCursor().getColumnIndex("AVATARPATH")));
+            Cursor cursor = this.getCursor();
+            holder.name.setText(cursor.getString(cursor.getColumnIndex("NAME")));
+            holder.userId.setText(cursor.getString(cursor.getColumnIndex("_id")));
+            new ImageDownloaderTask(holder.avatar).execute(cursor.getString(cursor.getColumnIndex("AVATARPATH")));
         }
         return convertView;
     }
@@ -53,14 +56,15 @@ public class ContactAdapter extends SimpleCursorAdapter {
         ImageView avatar;
     }
 
-    private class ImageDownloaderTask extends AsyncTask<Object, Void, Bitmap> {
+    private class ImageDownloaderTask extends AsyncTask<String, Void, Bitmap> {
         private final WeakReference imageViewReference;
         public ImageDownloaderTask(ImageView imageView) {
             imageViewReference = new WeakReference(imageView);
         }
         @Override
-        protected Bitmap doInBackground(Object... params) {
-            if(params[0] != null){
+        protected Bitmap doInBackground(String... params) {
+            if(StringUtils.isNotBlank(params[0])){
+            //if(params[0] != null){
                 return BitmapFactory.decodeFile(params[0].toString());
             }else{
                 return null;

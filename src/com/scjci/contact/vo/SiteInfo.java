@@ -1,13 +1,13 @@
 package com.scjci.contact.vo;
 
 public class SiteInfo{
-    private String work;
+    private String workWebsite;
 
-    public String getWork() {
-        return work;
+    public String getWorkWebsite() {
+        return workWebsite;
     }
 
-    public void setWork(String work) {
-        this.work = work;
+    public void setWorkWebsite(String workWebsite) {
+        this.workWebsite = workWebsite;
     }
 }

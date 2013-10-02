@@ -11,6 +11,9 @@ public class UserInfo {
     private MailInfo mailInfo;
     private SiteInfo siteInfo;
 
+    public UserInfo(){
+
+    }
     public String getName() {
         return name;
     }

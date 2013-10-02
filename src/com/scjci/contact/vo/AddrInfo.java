@@ -1,31 +1,31 @@
 package com.scjci.contact.vo;
 
 public class AddrInfo{
-    private String home;
-    private String work;
-    private String contact;
+    private String homeAddr;
+    private String workAddr;
+    private String contactAddr;
 
-    public String getContact() {
-        return contact;
+    public String getHomeAddr() {
+        return homeAddr;
     }
 
-    public void setContact(String contact) {
-        this.contact = contact;
+    public void setHomeAddr(String homeAddr) {
+        this.homeAddr = homeAddr;
     }
 
-    public String getHome() {
-        return home;
+    public String getWorkAddr() {
+        return workAddr;
     }
 
-    public void setHome(String home) {
-        this.home = home;
+    public void setWorkAddr(String workAddr) {
+        this.workAddr = workAddr;
     }
 
-    public String getWork() {
-        return work;
+    public String getContactAddr() {
+        return contactAddr;
     }
 
-    public void setWork(String work) {
-        this.work = work;
+    public void setContactAddr(String contactAddr) {
+        this.contactAddr = contactAddr;
     }
 }

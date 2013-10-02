@@ -9,9 +9,17 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     public final static int DATABASE_VERSION = 1;
     public final static String DATABASE_NAME = "scc.db";
+    private static SQLiteHelper instance = null;
 
     public SQLiteHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+    }
+
+    public static synchronized SQLiteHelper getInstance(Context context){
+        if(instance == null){
+            instance = new SQLiteHelper(context);
+        }
+        return instance;
     }
 
     private static void createContactTable(SQLiteDatabase db) {
@@ -32,13 +40,6 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
         db.execSQL(TABLE_CREATE);
     }
-
-    /*public static void dropDataBase(Context context){
-        //File  mDatabaseFile = context.getDatabasePath(DATABASE_NAME);
-		//context.deleteDatabase("scc.db");
-		//SQLiteDatabase.deleteDatabase(new File(mDatabaseFile.getParent(),"ESS.db"));
-		//SQLiteDatabase.deleteDatabase(new File(mDatabaseFile.getParent(),"ESS.db-journal"));
-	}*/
 
     @Override
     public void onCreate(SQLiteDatabase db) {

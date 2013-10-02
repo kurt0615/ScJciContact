@@ -1,22 +1,22 @@
 package com.scjci.contact.vo;
 
 public class DateInfo{
-    private String join;
-    private String birth;
+    private String joinDate;
+    private String birthday;
 
-    public String getJoin() {
-        return join;
+    public String getJoinDate() {
+        return joinDate;
     }
 
-    public void setJoin(String join) {
-        this.join = join;
+    public void setJoinDate(String joinDate) {
+        this.joinDate = joinDate;
     }
 
-    public String getBirth() {
-        return birth;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setBirth(String birth) {
-        this.birth = birth;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 }

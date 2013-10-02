@@ -1,5 +1,11 @@
-out/
-bin/
-gen/
+bin
+gen
+.gradle/
+gradle/
+build/
+build.gradle
+gradlew.*
+gradlew
 .idea/
-ScJciContact.iml
+*.iml
+*.properties

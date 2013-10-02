@@ -1,31 +1,31 @@
 package com.scjci.contact.vo;
 
 public class MailInfo{
-    private String home;
-    private String work;
-    private String main;
+    private String homeEmail;
+    private String workEmail;
+    private String mainEmail;
 
-    public String getHome() {
-        return home;
+    public String getHomeEmail() {
+        return homeEmail;
     }
 
-    public void setHome(String home) {
-        this.home = home;
+    public void setHomeEmail(String homeEmail) {
+        this.homeEmail = homeEmail;
     }
 
-    public String getWork() {
-        return work;
+    public String getWorkEmail() {
+        return workEmail;
     }
 
-    public void setWork(String work) {
-        this.work = work;
+    public void setWorkEmail(String workEmail) {
+        this.workEmail = workEmail;
     }
 
-    public String getMain() {
-        return main;
+    public String getMainEmail() {
+        return mainEmail;
     }
 
-    public void setMain(String main) {
-        this.main = main;
+    public void setMainEmail(String mainEmail) {
+        this.mainEmail = mainEmail;
     }
 }

@@ -1,16 +1,16 @@
 package com.scjci.contact.vo;
 
 public class PhoneInfo{
-    private String mobile;
+    private String mobilePhone;
     private String fax;
-    private String tele;
+    private String telephone;
 
-    public String getMobile() {
-        return mobile;
+    public String getMobilePhone() {
+        return mobilePhone;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile;
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
     }
 
     public String getFax() {
@@ -21,11 +21,11 @@ public class PhoneInfo{
         this.fax = fax;
     }
 
-    public String getTele() {
-        return tele;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setTele(String tele) {
-        this.tele = tele;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 }
