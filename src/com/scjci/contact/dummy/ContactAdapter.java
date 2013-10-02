@@ -65,6 +65,7 @@ public class ContactAdapter extends SimpleCursorAdapter {
         protected Bitmap doInBackground(String... params) {
             if(StringUtils.isNotBlank(params[0])){
             //if(params[0] != null){
+                int a = 0;
                 return BitmapFactory.decodeFile(params[0].toString());
             }else{
                 return null;
